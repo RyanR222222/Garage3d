@@ -1,13 +1,14 @@
-// Gestione Carosello (Ogni 4 secondi)
-setInterval(() => {
-    const caroselli = document.querySelectorAll('.carosello');
-    caroselli.forEach(carosello => {
-        const immagini = carosello.querySelectorAll('img');
-        immagini[0].classList.toggle('attiva');
-        immagini[1].classList.toggle('attiva');
-    });
-}, 4000);
-
+document.addEventListener("DOMContentLoaded", function() {
+    // Qui incolla tutto il tuo codice del carosello (setInterval, ecc.)
+    let indice = 0;
+    const immagini = document.querySelectorAll('.carosello img');
+    
+    setInterval(() => {
+        immagini[indice].classList.remove('attiva');
+        indice = (indice + 1) % immagini.length;
+        immagini[indice].classList.add('attiva');
+    }, 3000); // Cambia ogni 3 secondi
+});
 // Gestione Barra di Ricerca
 const inputRicerca = document.querySelector('#cerca-prodotto');
 const prodotti = document.querySelectorAll('.prodotto');
