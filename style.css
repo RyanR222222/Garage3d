@@ -49,26 +49,31 @@ header p { max-width: 600px; margin: 10px auto; line-height: 1.5; font-size: 1.5
 footer { background-color: #00ff0de8; color: rgb(255, 255, 255); padding: 100px; font-size: 0.9rem; margin-top: 20px; }
 footer p { margin: 5px 0; font-size: 1.5rem; }
 
-/* --- SEZIONE MOBILE --- */
 @media (max-width: 768px) {
+    /* 1. Titolo più piccolo */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* 2. Forza i prodotti a mettersi uno sotto l'altro al centro */
     .griglia-prodotti {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         padding: 10px !important;
-        grid-template-columns: 1fr !important; /* Forza una colonna sola */
+        width: 100% !important;
     }
 
+    /* 3. Ogni scheda prodotto deve essere larga quasi quanto il telefono */
     .prodotto {
         width: 90% !important;
+        max-width: 350px; /* Non farli diventare troppo giganti */
         margin: 15px auto !important;
     }
 
+    /* 4. Sistema le foto del carosello */
     .carosello {
-        height: 300px !important; /* Altezza fissa per il cellulare */
-    }
-
-    header h1 {
-        font-size: 1.8rem !important;
+        height: 250px !important;
+        width: 100% !important;
     }
 }
