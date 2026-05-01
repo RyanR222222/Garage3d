@@ -50,27 +50,27 @@ footer { background-color: #00ff0de8; color: rgb(255, 255, 255); padding: 100px;
 footer p { margin: 5px 0; font-size: 1.5rem; }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Evita che il sito balli a destra e sinistra */
+    }
+
     .griglia-prodotti {
-        /* Forza la griglia a una sola colonna */
         grid-template-columns: 1fr !important; 
-        /* Riduciamo i margini per far stare tutto nello schermo del telefono */
-        padding: 15px !important;
-        gap: 20px !important;
+        padding: 10px !important; /* Meno spazio ai lati */
+        width: 100%;
+        margin: 0;
     }
 
-    .navbar {
-        /* Se la navbar è troppo lunga, la mettiamo in verticale */
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+    .prodotto {
+        width: 95%; /* Quasi tutta la larghezza del telefono */
+        margin: 10px auto; /* Centra il prodotto */
     }
 
-    .nav-links {
-        gap: 10px;
+    header {
+        padding: 20px;
     }
 
-    /* Riduciamo le scritte dei prodotti così non escono dai bordi */
-    .prodotto h2 {
-        font-size: 1.2rem;
+    header h1 {
+        font-size: 2rem; /* Titolo più leggibile */
     }
 }
