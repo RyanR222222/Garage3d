@@ -49,12 +49,14 @@ header p { max-width: 600px; margin: 10px auto; line-height: 1.5; font-size: 1.5
 footer { background-color: #00ff0de8; color: rgb(255, 255, 255); padding: 100px; font-size: 0.9rem; margin-top: 20px; }
 footer p { margin: 5px 0; font-size: 1.5rem; }
 
+/* --- SEZIONE MOBILE --- */
 @media (max-width: 768px) {
     .griglia-prodotti {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         padding: 10px !important;
+        grid-template-columns: 1fr !important; /* Forza una colonna sola */
     }
 
     .prodotto {
@@ -63,14 +65,10 @@ footer p { margin: 5px 0; font-size: 1.5rem; }
     }
 
     .carosello {
-        height: 250px !important;
+        height: 300px !important; /* Altezza fissa per il cellulare */
     }
 
     header h1 {
         font-size: 1.8rem !important;
-    }
-    
-    .navbar {
-        flex-direction: column;
     }
 }
