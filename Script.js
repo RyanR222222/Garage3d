@@ -1,29 +1,13 @@
-// Aspetta che tutta la pagina sia caricata prima di partire
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // Seleziona tutti i caroselli presenti nella pagina
+// Gestione Carosello (Ogni 4 secondi)
+setInterval(() => {
     const caroselli = document.querySelectorAll('.carosello');
-
     caroselli.forEach(carosello => {
         const immagini = carosello.querySelectorAll('img');
-        let indiceCorrente = 0;
-
-        // Funzione per cambiare immagine
-        function cambiaImmagine() {
-            // Togli la classe 'attiva' dall'immagine attuale
-            immagini[indiceCorrente].classList.remove('attiva');
-            
-            // Passa alla prossima immagine (torna a 0 se è l'ultima)
-            indiceCorrente = (indiceCorrente + 1) % immagini.length;
-            
-            // Aggiungi la classe 'attiva' alla nuova immagine
-            immagini[indiceCorrente].classList.add('attiva');
-        }
-
-        // Fai partire il cambio ogni 3 secondi (3000 millisecondi)
-        setInterval(cambiaImmagine, 3000);
+        immagini[0].classList.toggle('attiva');
+        immagini[1].classList.toggle('attiva');
     });
-});
+}, 4000);
+
 // Gestione Barra di Ricerca
 const inputRicerca = document.querySelector('#cerca-prodotto');
 const prodotti = document.querySelectorAll('.prodotto');
