@@ -1,0 +1,55 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Scorrimento fluido link della BARRA di navigazione */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f9; color: #333; text-align: center; }
+
+/* --- BARRA DI NAVIGAZIONE --- */
+.navbar {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.nav-links a:hover { color: #ff0800; }
+.nav-search input { 
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    border: none; 
+    outline: none; 
+    width: 1000px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+header { background-color: #ff0800; color: white; padding: 40px 20px; }
+.logo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #ffffff; }
+header p { max-width: 600px; margin: 10px auto; line-height: 1.5; font-size: 1.5rem;}
+
+.griglia-prodotti { display: grid; grid-template-columns: repeat(3, 1fr); gap: 100px; padding:100px; max-width: 2000px; margin: 0 auto; }
+.prodotto { background: white; padding: 45px; border-radius: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.prodotto:hover { transform: scale(1.02); } /* Piccolo effetto al passaggio del mouse */
+
+.carosello { position: relative; height: 450px; border-radius: 40px; overflow: hidden; margin-bottom: 45px; background: #ddd;}
+.carosello img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out; }
+.carosello img.attiva { opacity: 1; }
+
+.prodotto h2 { font-size: 2rem; color: #2c3e50; }
+.prodotto p { font-size: 1.5rem; margin: 10px 0; color: #666; height: 40px; }
+.prezzo { display: block; font-weight: bold; font-size: 2rem; margin-top: 200px; color: #ff0000d7; }
+
+footer { background-color: #00ff0de8; color: rgb(255, 255, 255); padding: 100px; font-size: 0.9rem; margin-top: 20px; }
+footer p { margin: 5px 0; font-size: 1.5rem; }
+
+@media (max-width: 768px) { 
+    .griglia-prodotti { grid-template-columns: 1fr; padding: 20px; } 
+    .navbar { flex-direction: column; gap: 10px; }
+}
